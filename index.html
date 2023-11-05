@@ -194,20 +194,28 @@
 
         function toggleTopic(topicId) {
             const topicContent = document.getElementById(topicId);
-            if (topicContent.style.display === "block") {
-                topicContent.style.display = "none";
-            } else {
-                topicContent.style.display = "block";
-            }
+            const allTopicContents = document.querySelectorAll(".topic-content");
+
+            // Feche todos os conteúdos antes de abrir o desejado
+            allTopicContents.forEach(content => {
+                content.style.display = "none";
+            });
+
+            // Abra o conteúdo desejado
+            topicContent.style.display = "block";
         }
 
         function toggleContactIcons() {
             const icons = document.getElementById('contact-icons');
-            if (icons.style.display === 'none' || icons.style.display === '') {
-                icons.style.display = 'block';
-            } else {
-                icons.style.display = 'none';
-            }
+            const allTopicContents = document.querySelectorAll(".topic-content");
+
+            // Feche todos os conteúdos antes de abrir o desejado
+            allTopicContents.forEach(content => {
+                content.style.display = "none";
+            });
+
+            // Abra o conteúdo desejado
+            icons.style.display = 'block';
         }
     </script>
 </body>
