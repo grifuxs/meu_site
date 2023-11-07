@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Site do Lukas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp9164316.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .login-box input {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .login-icon {
+            font-size: 36px;
+            color: #007bff;
+        }
+
+        .info-icon {
+            font-size: 18px;
+            color: #999;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .topics {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .topic-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .topic-content {
+            display: none;
+            padding: 10px;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .social-icons {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            margin: 100px 0;
+        }
+
+        .social-icons a {
+            margin: 0 30px;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box" id="login-box">
+        <i class="fas fa-key login-icon"></i>
+        <h1>Login</h1>
+        <p>login / usuario</p><br>
+        <p>senha / 1234</p>
+        <form id="loginForm">
+            <input type="text" placeholder="Nome de Usuário" required id="username">
+            <i class="fas fa-info-circle info-icon" title="Informações adicionais"></i>
+            <br>
+            <input type="password" placeholder="Senha" required id="password">
+            <i class="fas fa-info-circle info-icon" title="Informações adicionais"></i>
+            <br>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <div class="content-box hidden" id="content-box">
+        <header>
+            <h1>Sobre Mim</h1>
+        </header>
+
+        <div class="container">
+            <div class="topics">
+                <button class="topic-button" onclick="toggleTopic('exp-1')">Experiência</button>
+                <button class="topic-button" onclick="toggleContactIcons()">Contato</button>
+                <button class="topic-button" onclick="toggleTopic('tra-3')">Trabalho</button>
+                <button class="topic-button" onclick="toggleTopic('int-1')">Interesses</button>
+            </div>
+
+            <div class="topic-content" id="exp-1">
+                <p>Criei interfaces de jogos personalizados e mods de jogos, exemplo NRO naruto ranganarok online, ddtank classic.</p>
+                <img class="topic-image" src="https://th.bing.com/th/id/OIP.XIooiE42qq5Dd3FWLZMW5gHaEo?pid=ImgDet&rs=1.jpg" alt="Experiência">
+            </div>
+
+            <div class="social-icons hidden" id="contact-icons">
+                <a href="mailto:lukasemanoelx1@gmail.com">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/11/Gmail-Logo.png" alt="Email">
+                </a>
+                <a href="https://www.linkedin.com/in/lukas-emanoel-lima-limeira-487a431b1/">
+                    <img src="https://th.bing.com/th/id/OIP.VJhVCn_KEP55vMgXH9jepwHaHY?pid=ImgDet&rs=1.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/lukas_e.l.l/">
+                    <img src="https://th.bing.com/th/id/OIP.JtmXSh_uyZBaTg1eXd-NtgHaHa?pid=ImgDet&rs=1.png" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="topic-content hidden" id="cont-2">
+                <p>Contate-me em <a href="mailto:lukasemanoelx1@gmail.com">lukasemanoelx1@gmail.com</a>. Você também pode me encontrar no 
+                    <a href="https://www.linkedin.com/in/lukas-emanoel-lima-limeira-487a431b1/">LinkedIn</a> 
+                    e <a href="https://www.instagram.com/lukas_e.l.l/">instagram</a>.</p>
+            </div>
+
+            <div class="topic-content hidden" id="tra-3">
+                <p>Sou um desenvolvedor web com experiência em criar sites interativos e aplicativos da web. Estou
+                    concluindo meu tecnólogo em Análise e Desenvolvimento de Sistemas, atualmente trabalho na empresa
+                    Bosch Rexroth na produção de dispositivos
+                    de segurança válvulas A10. <a href="https://www.boschrexroth.com/pt/br/">Bosch Rexroth</a>.</p>
+                <img class="topic-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAh95qiezScnM33nXpj9QXcbd_EMBi_fBLiA&usqp=CAU.jpg" alt="Trabalho">
+            </div>
+
+            <div class="topic-content hidden" id="int-1">
+                <p>Meus hobbies incluem programação, jogos de computador, basquete e karatê. Também gosto de explorar novas tecnologias e aprender coisas novas nas horas vagas.</p>
+                <img class="topic-image" src="https://www.losreplicantes.com/images/articulos/11000/11895/s2.jpg" alt="Interesses">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const username = loginForm.querySelector("#username").value;
+            const password = loginForm.querySelector("#password").value;
+
+            if (username === "usuario" && password === "1234") {
+                const loginBox = document.querySelector("#login-box");
+                const contentBox = document.querySelector("#content-box");
+                loginBox.style.display = "none";
+                contentBox.style.display = "block";
+            } else {
+                alert("Credenciais inválidas. Tente novamente.");
+            }
+        });
+
+        function toggleTopic(topicId) {
+            const topicContent = document.getElementById(topicId);
+            const allTopicContents = document.querySelectorAll(".topic-content");
+
+            // Feche todos os conteúdos antes de abrir o desejado
+            allTopicContents.forEach(content => {
+                content.style.display = "none";
+            });
+
+            // Abra o conteúdo desejado
+            topicContent.style.display = "block";
+        }
+
+        function toggleContactIcons() {
+            const icons = document.getElementById('contact-icons');
+            const allTopicContents = document.querySelectorAll(".topic-content");
+
+            // Feche todos os conteúdos antes de abrir o desejado
+            allTopicContents.forEach(content => {
+                content.style.display = "none";
+            });
+
+            // Abra o conteúdo desejado
+            icons.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
